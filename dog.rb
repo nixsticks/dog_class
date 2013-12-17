@@ -20,7 +20,7 @@ class Dog
   end
 
   def self.find(id)
-    result = db.query("SELECT * FROM dog WHERE id = '10'")
+    result = db.query("SELECT * FROM dog WHERE id = #{id}")
     matches(result)
     new_from_hash(matches(result).first)
   end
