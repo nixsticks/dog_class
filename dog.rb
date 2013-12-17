@@ -26,7 +26,7 @@ class Dog
   end
 
   def new_from_hash(hash)
-    Dog.new(hash["name"], hash["color"])
+    Dog.new(hash["name"], hash["color"]).tap {|dog| dog.id == hash["id"]}
   end
 
   def self.find_by_att(attribute, value)
